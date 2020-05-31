@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Event Details</h2>
+<table class="table">
+    <tr>
+        <th>Event Name</th>
+        <th>Guest Number</th>
+        <th>Amount of payment</th>
+        <th>Email address</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.EventName</td>
+            <td>@i.GuestNumber</td>
+            <td>@i.PaymentAmount</td>
+            <td>@i.Email</td>
+
+        </tr>
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Client Details</h2>
+<table class="table">
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Age</th>
+        <th>Phone no.</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Email</td>
+            <td>@i.FullName</td>
+            <td>@i.Address</td>
+            <td>@i.Age</td>
+            <td>@i.Phone</td>
+
+        </tr>
+    }
+</table>

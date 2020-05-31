@@ -1,0 +1,135 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Online Event Registration System</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .my_navbar {
+            overflow: hidden;
+            background-color: gray;
+        }
+
+            .my_navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .my_dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+            .my_dropdown .my_dropbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .my_navbar a:hover, .my_dropdown:hover .my_dropbtn {
+                background-color: red;
+            }
+
+        .my_dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .my_dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+                .my_dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .my_dropdown:hover .my_dropdown-content {
+            display: block;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="header">
+        <h1 style="text-align:center;">Online Event Registration System</h1>
+    </div>
+
+    <div class="my_navbar">
+        @*       <div class="col-12 menu"></div>*@
+        <a href="/Home/index">Home</a>
+
+        <div class="my_dropdown">
+            <button class="my_dropbtn">
+                Client
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="my_dropdown-content">
+                <a href="/Client/index">Register</a>
+                <a href="/Client/index2">Update</a>
+            </div>
+        </div>
+        <div class="my_dropdown">
+            <button class="my_dropbtn">
+                Event
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="my_dropdown-content">
+                <a href="/Event/index">Register</a>
+                <a href="/Event/index2">Delete</a>
+            </div>
+        </div>
+        <a href="/Search/index">Search Event</a>
+    </div>
+
+    @RenderBody()
+
+    <div class="col-md-12 text-center">
+        <a href="mailTo:rhymermj@gmail.com" class="contactButton">GET IN TOUCH</a>
+    </div>
+
+    <div class="copyrightSection">
+        <div class="col-md-12 text-center">
+            <p>&copy;Copyright MJ Choi 2020</p>
+        </div>
+    </div>
+
+    @*
+        <div class="header">
+            <h1 style="text-align:center;">CONNECT WITH US</h1>
+        </div>
+    *@
+
+</body>
+</html>
