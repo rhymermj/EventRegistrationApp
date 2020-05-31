@@ -28,17 +28,29 @@ namespace EventRegistrationApplication.Controllers
         [HttpPost]
         public ActionResult Register(Client client)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Database1Entities db = new Database1Entities();
-                db.Clients.Add(client);
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    Database1Entities db = new Database1Entities();
+                    db.Clients.Add(client);
+                    db.SaveChanges();
 
-                return RedirectToAction("regResult");
+                    return RedirectToAction("RegResult");
+                }
             }
+            catch
+            {
+                return RedirectToAction("RegError");
+            }
+            
             return View(client);
         }
         public ActionResult RegResult()
+        {
+            return View();
+        }
+        public ActionResult RegError()
         {
             return View();
         }
@@ -55,19 +67,24 @@ namespace EventRegistrationApplication.Controllers
 
             return View(cl);
         }
-
-
         public ActionResult Edit(string email, string address, string phone)
         {
-            Database1Entities db = new Database1Entities();
+            try
+            {
+                Database1Entities db = new Database1Entities();
 
-            var client = db.Clients.First(x => x.Email == email);
+                var client = db.Clients.First(x => x.Email == email);
 
-            client.Address = address;
-            client.Phone = phone;
-            db.SaveChanges();
+                client.Address = address;
+                client.Phone = phone;
+                db.SaveChanges();
 
-            return RedirectToAction("editResult");
+                return RedirectToAction("editResult");
+            }
+            catch
+            {
+                return RedirectToAction("Index3");
+            }            
         }
 
         public string Delete(string name)

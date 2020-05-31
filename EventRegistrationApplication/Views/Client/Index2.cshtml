@@ -2,12 +2,25 @@
     ViewBag.Title = "Index2";
 }
 
-<div style="text-align:center;">
-    <h2>Update Client</h2>
-    <form method="post" action="~/Client/edit">
-        Enter email:<input type="email" name="email" /><br />
-        New Address:<input type="text" name="address" /><br />
-        New Phone:<input type="text" name="phone" /><br />
-        <input type="submit" value="Submit" />
-    </form>
-</div>
+<h2 style="text-align:center; margin-top: 50px; margin-bottom:10px">Update Client</h2>
+<form method="post" action="~/Client/edit">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <th><b>Enter Email</b></th>
+            <td><input type="email" name="email" required /></td>
+        </tr>
+        <tr>
+            <th>New Address</th>
+            <td><input type="text" name="address" required /></td>
+        </tr>
+        <tr>
+            <th>New Phone</th>
+            <td><input type="text" name="phone" required /></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="UPDATE" /></td>
+        </tr>
+    </table>
+</form>
+

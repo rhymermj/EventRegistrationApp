@@ -2,31 +2,30 @@
     ViewBag.Title = "Index";
 }
 
-<div class="col-6" text-center>
-    <h2 style="text-align:center;">Event Registration</h2>
-    <form method="post" action="~/Event/register">
-        <table style="margin-left:auto;margin-right:auto;">
-            <tr>
-                <th><b>Event Name</b></th>
-                <td><input type="text" name="EventName" required /></td>
-            </tr>
-            <tr>
-                <th>Guest Number</th>
-                <td><input type="number" name="GuestNumber" required /></td>
-            </tr>
-            <tr>
-                <th>Amount of Payment</th>
-                <td><input type="number" min="0.01" step="0.01" name="PaymentAmount" required /></td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td><input type="email" name="Email" required /></td>
-            </tr>
+<h2 style="text-align:center; margin-top: 50px; margin-bottom:10px">Event Registration</h2>
+<form method="post" action="~/Event/register">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <th><b>Event Name</b></th>
+            <td><input type="text" name="EventName" required /></td>
+        </tr>
+        <tr>
+            <th>Guest Number</th>
+            <td><input type="number" name="GuestNumber" required /></td>
+        </tr>
+        <tr>
+            <th>Amount of Payment</th>
+            <td><input type="number" min="0.01" step="0.01" name="PaymentAmount" required /></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" name="Email" required /></td>
+        </tr>
 
-            <tr>
-                <th></th>
-                <td><input type="submit" value="Register" /></td>
-            </tr>
-        </table>
-    </form>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="REGISTER" /></td>
+        </tr>
+    </table>
+</form>
 </div>

@@ -90,8 +90,8 @@ body {
 
 
 .header {
-    background-color: #9933cc;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #4169E1;
     padding: 15px;
 }
 
@@ -112,7 +112,7 @@ body {
     }
 
         .menu a:hover {
-            background-color: #0099cc;
+            background-color: #B0E0E6;
         }
 
 img {

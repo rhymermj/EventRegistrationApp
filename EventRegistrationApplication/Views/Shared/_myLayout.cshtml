@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Online Event Registration System</title>
+    <title>Online Event Registration</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
@@ -20,7 +20,7 @@
 
         .my_navbar {
             overflow: hidden;
-            background-color: gray;
+            background-color: deepskyblue;
         }
 
             .my_navbar a {
@@ -49,7 +49,7 @@
             }
 
             .my_navbar a:hover, .my_dropdown:hover .my_dropbtn {
-                background-color: red;
+                background-color: #B0E0E6;
             }
 
         .my_dropdown-content {
@@ -71,7 +71,7 @@
             }
 
                 .my_dropdown-content a:hover {
-                    background-color: #ddd;
+                    background-color: #B0E0E6;
                 }
 
         .my_dropdown:hover .my_dropdown-content {
@@ -83,11 +83,10 @@
 </head>
 <body>
     <div class="header">
-        <h1 style="text-align:center;">Online Event Registration System</h1>
+        <h1 style="text-align:center;">ONLINE EVENT REGISTRATION</h1>
     </div>
 
     <div class="my_navbar">
-        @*       <div class="col-12 menu"></div>*@
         <a href="/Home/index">Home</a>
 
         <div class="my_dropdown">
@@ -97,6 +96,7 @@
             </button>
             <div class="my_dropdown-content">
                 <a href="/Client/index">Register</a>
+                <a href="/Client/detail">View</a>
                 <a href="/Client/index2">Update</a>
             </div>
         </div>
@@ -107,29 +107,16 @@
             </button>
             <div class="my_dropdown-content">
                 <a href="/Event/index">Register</a>
+                <a href="/Search/detail">View</a>
                 <a href="/Event/index2">Delete</a>
             </div>
         </div>
         <a href="/Search/index">Search Event</a>
     </div>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     @RenderBody()
-
-    <div class="col-md-12 text-center">
-        <a href="mailTo:rhymermj@gmail.com" class="contactButton">GET IN TOUCH</a>
-    </div>
-
-    <div class="copyrightSection">
-        <div class="col-md-12 text-center">
-            <p>&copy;Copyright MJ Choi 2020</p>
-        </div>
-    </div>
-
-    @*
-        <div class="header">
-            <h1 style="text-align:center;">CONNECT WITH US</h1>
-        </div>
-    *@
 
 </body>
 </html>

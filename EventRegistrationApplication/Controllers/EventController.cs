@@ -23,61 +23,67 @@ namespace EventRegistrationApplication.Controllers
         {
             return View();
         }
-        public ActionResult register(Register reg)
+        public ActionResult Register(Register Model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Database1Entities db = new Database1Entities();
-                db.Registers.Add(reg);
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    Database1Entities db = new Database1Entities();
+                    db.Registers.Add(Model);
+                    db.SaveChanges();
 
-                return RedirectToAction("regResult");
+                    return RedirectToAction("Detail");
+                }
             }
-            return View(reg);
+            catch
+            {
+                return RedirectToAction("RegResult");
+            }
+            return View(Model);
         }
         public ActionResult RegResult()
         {
             return View();
-        }
-        public ActionResult Detail()
-        {
-            // Create an object in order to use Database1Entities class connect to the tables
-            Database1Entities db = new Database1Entities();
-
-            var evt = from x in db.Registers
-                      select x;
-
-            return View(evt);
-        }
-        public ActionResult delete(string name, string email)
-        {
-            Database1Entities db = new Database1Entities();
-
-            List<Register> reg = db.Registers.Where(x => x.EventName == name && x.Email == email).ToList();
-
-            foreach (var i in reg)
-            {
-                db.Registers.Remove(i);
-            }
-            db.SaveChanges();
-
-            return RedirectToAction("delResult");
         }
         public ActionResult DelResult()
         {
             return View();
         }
 
-        /*
-        public string delete(string email, string name)
+        public ActionResult Detail()
         {
+            // Create an object in order to use Database1Entities class connect to the tables
             Database1Entities db = new Database1Entities();
-            
-            Register reg = db.Registers.First(x => x.Email == email && x.EventName == name);
-            db.Registers.Remove(reg);
-            db.SaveChanges();
-            return "Delete successful";
-        }*/
 
+            var evt = from x in db.Registers select x;
+
+            return View(evt);
+        }
+        public ActionResult Delete(string name, string email)
+        {
+            try
+            {
+                Database1Entities db = new Database1Entities();
+
+                List<Register> reg = db.Registers.Where(x => x.EventName == name && x.Email == email).ToList();
+
+                foreach (var i in reg)
+                {
+                    db.Registers.Remove(i);
+                }
+                db.SaveChanges();
+
+                return RedirectToAction("Detail");
+            }
+            catch
+            {
+                return RedirectToAction("DelResult");
+            }
+            
+
+        }
+     
+      
     }
 }

@@ -3,12 +3,20 @@
 }
 
 
-<div style="text-align:center;">
-    <h1>Delete Event</h1>
-
-    <form method="post" action="~/Event/delete">
-        Event Name:<input type="text" name="name" /> <br />
-        Client email:<input type="email" name="email" /> <br />
-        <input type="submit" />
-    </form>
-</div>
+<h2 style="text-align:center; margin-top: 50px; margin-bottom:10px">Delete Event Registration</h2>
+<form method="post" action="~/Event/delete">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <th><b>Event Name</b></th>
+            <td><input type="text" name="name" required /></td>
+        </tr>
+        <tr>
+            <th>Client Email</th>
+            <td><input type="email" name="email" required /></td>
+        </tr>
+        <tr> 
+            <th></th>
+            <td><input type="submit" value="DELETE" /></td>
+        </tr>
+    </table>
+</form>

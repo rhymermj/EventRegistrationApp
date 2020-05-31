@@ -2,11 +2,21 @@
     ViewBag.Title = "Index";
 }
 
-<div style="text-align:center;">
-    <h2>Search Event</h2>
-    <form method="post" action="~/Search/search">
-        Event Name: <input type="text" name="name" /><br />
-        Event Date: <input type="text" name="date" /><br />
-        <input type="submit" value="Search" /><br />
-    </form>
-</div>
+<h2 style="text-align:center; margin-top: 50px; margin-bottom:10px">Search Event</h2>
+<form method="post" action="~/Search/search">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <th><b>Event Name</b></th>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <th>Event Date</th>
+            <td><input type="text" name="date"></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="SEARCH" /></td>
+        </tr>
+    </table>
+</form>
+
