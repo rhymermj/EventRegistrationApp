@@ -202,6 +202,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Client\Index3.cshtml" />
     <Content Include="Views\Client\RegError.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Index4.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

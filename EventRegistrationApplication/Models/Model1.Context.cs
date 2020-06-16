@@ -25,6 +25,8 @@ namespace EventRegistrationApplication.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        /* Entities - Clients, Events, Registers are entity names.
+           Entities are mapped to Client/Event/Register table in the database */
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Register> Registers { get; set; }

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index4";
+}
+
+<h2 style="text-align:center; margin-top: 50px; margin-bottom:10px">Delete Client</h2>
+<form method="post" action="~/Client/delete">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <th>Client Email</th>
+            <td><input type="email" name="email" required /></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="DELETE" /></td>
+        </tr>
+    </table>
+</form>

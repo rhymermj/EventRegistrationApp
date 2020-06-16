@@ -22,14 +22,10 @@ namespace EventRegistrationApplication.Controllers
             // Search by exact match 
             List<Event> evt = db.Events.Where(x => x.EventName == name || x.Date == date).ToList();
             return View(evt);
-
-            // Also works
-            //var s = from x in db.Events where x.EventName == name || x.Date == date select x;
-            //return View(s);
         }       
         public ActionResult Detail()
         {
-            // Create an object in order to use Database1Entities class connect to the tables
+            // Create an object in order to use Database1Entities class connected to the Event table.
             Database1Entities db = new Database1Entities();
 
             var evt = from x in db.Events

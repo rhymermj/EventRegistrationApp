@@ -60,6 +60,7 @@ namespace EventRegistrationApplication.Controllers
 
             return View(evt);
         }
+        /*
         public ActionResult Delete(string name, string email)
         {
             try
@@ -80,10 +81,35 @@ namespace EventRegistrationApplication.Controllers
             {
                 return RedirectToAction("DelResult");
             }
-            
+        }*/
+        public ActionResult Delete(string name, string email)
+        {
+            try
+            {
+                Database1Entities db = new Database1Entities();
+
+                /* x refers to a record in the Register table.
+                 * Search Register table records and find a (first) record of the table where
+                 * the EventName & Email of the record equals to the name & email of the user input,
+                 * and save to the variable client. */
+                Register reg = db.Registers.First(x => x.EventName == name && x.Email == email);
+                
+                // Remove the reg record from the table.
+                db.Registers.Remove(reg);
+
+                // Map the changes to the table and update the database.
+                db.SaveChanges();
+
+                return RedirectToAction("Detail");
+            }
+            catch
+            {
+                return RedirectToAction("DelResult");
+            }
+
 
         }
-     
-      
+
+
     }
 }

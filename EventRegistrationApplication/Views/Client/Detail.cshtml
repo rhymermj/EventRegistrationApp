@@ -12,15 +12,18 @@
         <th>Phone no.</th>
     </tr>
 
+    @*Get the data from Client table and display in this view file.
+      Since table data have multiple records, we use a loop to read the record line by line. *@
     @foreach (var i in Model)
     {
         <tr>
+            @*Print Client details
+              i refers to each record of the Client table*@
             <td>@i.Email</td>
             <td>@i.FullName</td>
             <td>@i.Address</td>
             <td>@i.Age</td>
             <td>@i.Phone</td>
-
         </tr>
     }
 </table>
